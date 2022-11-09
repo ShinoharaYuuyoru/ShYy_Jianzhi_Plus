@@ -1,4 +1,4 @@
-# 剑指Offer专项突破版 面试题题解及思路
+# 《剑指Offer专项突破版》题解
 
 <https://leetcode.cn/problem-list/e8X3pBZi/>
 
