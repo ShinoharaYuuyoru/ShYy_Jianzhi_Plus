@@ -1,3 +1,43 @@
+// 1
+class Solution {
+   public:
+    int divide(int a, int b) {
+        int result = 0;
+
+        // The case causes int type overflow in `result`
+        if ((a == (int)0x80000000) && (b == -1)) {
+            return 0x7fffffff;
+        }
+        if ((a == (int)0x80000000) && (b == 1)) {
+            return (int)0x80000000;
+        }
+
+        bool is_negative = false;
+        if (a > 0) {
+            a = 0 - a;
+            is_negative = !is_negative;
+        }
+        if (b > 0) {
+            b = 0 - b;
+            is_negative = !is_negative;
+        }
+
+        while (1) {
+            if (a > b) {
+                break;
+            } else {
+                a -= b;
+                result++;
+            }
+        }
+
+        result = (is_negative ? (0 - result) : result);
+
+        return result;
+    }
+};
+
+// 2
 class Solution {
    public:
     int divide(int a, int b) {
@@ -44,7 +84,7 @@ class Solution {
             a -= now_divisor;
         }
 
-        result = (is_negative == false ? result : (0 - result));
+        result = (is_negative ? (0 - result) : result);
 
         return result;
     }
