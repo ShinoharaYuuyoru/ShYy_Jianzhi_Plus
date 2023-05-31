@@ -1,5 +1,9 @@
+#include <algorithm>
+#include <string>
+using namespace std;
+
 class Solution {
-public:
+   public:
     string addBinary(string a, string b) {
         string res = "";
 

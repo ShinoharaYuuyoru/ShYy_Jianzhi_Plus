@@ -1,3 +1,5 @@
+#include <iostream>
+#include <limits>
 #include <vector>
 using namespace std;
 
@@ -209,7 +211,7 @@ class Solution {
         tmp = n - ((n >> 1) & 033333333333) - ((n >> 2) & 011111111111);
         return ((tmp + (tmp >> 3)) & 030707070707) % 63;
     }
-    
+
     int hakmem_popcount(uint32_t n) {
         uint32_t n_temp;
         n_temp = (n >> 1) & 033333333333;  // Octal. Count bits in each 3-bit field.
